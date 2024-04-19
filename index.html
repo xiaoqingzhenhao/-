@@ -1,17 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>书途研学</title>
+    <title>Flexbox 网络编辑学习笔记</title>
+    <style>
+        body {
+            font-family: '微软雅黑', Arial, sans-serif;
+            line-height: 1.6;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            border: 1px solid #ddd;
+        }
+        h1, h2, h3 {
+            color: #333;
+        }
+        .flexbox-example {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+        .flex-item {
+            background: #f4f4f4;
+            padding: 20px;
+            margin: 5px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        .code {
+            background: #e9e9e9;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            font-family: 'Courier New', Courier, monospace;
+        }
+    </style>
 </head>
-<body> 
-    <ul>
-        <li>亲子营</li>
-        
-    </ul>
+<body>
+    <div class="container">
+        <h1>Flexbox 布局学习笔记</h1>
 
+        <h2>Flexbox 简介</h2>
+        <p>Flexbox（弹性盒子布局）是一种CSS布局模式，它提供了一种高效的方式来布局、对齐和分配容器内项目的空间，即使它们的大小未知或动态变化。</p>
+
+        <h2>Flexbox 容器属性</h2>
+        <ul>
+            <li><strong>display: flex;</strong> - 启用 Flexbox 布局。</li>
+            <li><strong>flex-direction:</strong> - 控制主轴方向（row, row-reverse, column, column-reverse）。</li>
+            <li><strong>flex-wrap:</strong> - 控制子元素是否换行（nowrap, wrap, wrap-reverse）。</li>
+            <li><strong>justify-content:</strong> - 控制子元素在主轴上的对齐方式（flex-start, flex-end, center, space-between, space-around, space-evenly）。</li>
+            <li><strong>align-items:</strong> - 控制子元素在交叉轴上的对齐方式（flex-start, flex-end, center, baseline, stretch）。</li>
+        </ul>
+
+        <h2>Flexbox 项目属性</h2>
+        <ul>
+            <li><strong>order:</strong> - 控制子元素的排序（数值越小，越靠前）。</li>
+            <li><strong>flex-grow:</strong> - 定义子元素的放大比例。</li>
+            <li><strong>flex-shrink:</strong> - 定义子元素的缩小比例。</li>
+            <li><strong>flex-basis:</strong> - 定义子元素的默认大小。</li>
+            <li><strong>align-self:</strong> - 允许子元素有与其他元素不同的对齐方式。</li>
+        </ul>
+
+        <h2>盒子变形</h2>
+        <p>盒子变形通常指的是改变元素的尺寸和位置，这可以通过CSS的 transform 属性实现。例如，:hover 伪类可以触发变形效果。</p>
+
+        <h2>动画</h2>
+        <p>动画可以通过CSS的 @keyframes 规则和 animation 属性来创建。</p>
+
+        <h2>Flexbox 实例</h2>
+        <div class="flexbox-example">
+            <div class="flex-item">1</div>
+            <div class="flex-item">2</div>
+            <div class="flex-item">3</div>
+        </div>
+        <pre class="code">
+&lt;style&gt;
+  .flexbox-example {
+    display: flex;
+    justify-content: space-between;
+  }
+  .flex-item {
+    background: #f4f4f4;
+    padding: 20px;
+    margin: 5px;
+    border: 1px solid #ddd;
+    text-align: center;
+  }
+&lt;/style&gt;
+        </pre>
+
+        <h3>变形和动画示例</h3>
+        <div class="example">
+            <div class="flex-item">看我变形！</div>
+        </div>
+        <pre class="code">
+&lt;style&gt;
+  .flex-item:hover {
+    transform: scale(1.1) rotate(10deg);
+  }
   
-
+  @keyframes example {
+    0% { background-color: #f4f4f4; }
+    100% { background-color: #6495ED; }
+  }
+  
+  .flex-item {
+    animation: example 4s infinite alternate;
+  }
+&lt;/style&gt;
+        </pre>
+    </div>
 </body>
 </html>
